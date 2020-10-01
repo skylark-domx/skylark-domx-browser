@@ -75,7 +75,7 @@
   factory(define,require);
 
   if (!isAmd) {
-    var skylarkjs = require("skylark-langx/skylark");
+    var skylarkjs = require("skylark-langx-ns");
 
     if (isCmd) {
       module.exports = skylarkjs;
@@ -209,6 +209,12 @@ define('skylark-domx-browser/browser',[
             end : transEndEventName
         };
     }
+
+    browser.support.cssPointerEvents =  (function() {
+        testEl.style.cssText = 'pointer-events:auto';
+        return testEl.style.pointerEvents === 'auto';
+    })(),
+
 
     testEl = null;
 

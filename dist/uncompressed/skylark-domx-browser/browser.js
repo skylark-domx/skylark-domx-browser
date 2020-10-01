@@ -122,6 +122,12 @@ define([
         };
     }
 
+    browser.support.cssPointerEvents =  (function() {
+        testEl.style.cssText = 'pointer-events:auto';
+        return testEl.style.pointerEvents === 'auto';
+    })(),
+
+
     testEl = null;
 
     return skylark.attach("domx.browser",browser);
