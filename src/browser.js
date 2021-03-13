@@ -37,16 +37,6 @@ define([
                           testEl.oMatchesSelector ||
                           testEl.matchesSelector,
 
-        requestFullScreen = testEl.requestFullscreen || 
-                            testEl.webkitRequestFullscreen || 
-                            testEl.mozRequestFullScreen || 
-                            testEl.msRequestFullscreen,
-
-        exitFullScreen =  document.exitFullscreen ||
-                          document.webkitCancelFullScreen ||
-                          document.mozCancelFullScreen ||
-                          document.msExitFullscreen,
-
         testStyle = testEl.style;
 
     for (var name in testStyle) {
@@ -102,10 +92,6 @@ define([
 
         matchesSelector: matchesSelector,
 
-        requestFullScreen : requestFullScreen,
-
-        exitFullscreen : requestFullScreen,
-
         location: function() {
             return window.location;
         },
@@ -126,6 +112,8 @@ define([
         testEl.style.cssText = 'pointer-events:auto';
         return testEl.style.pointerEvents === 'auto';
     })(),
+
+
 
 
     testEl = null;
