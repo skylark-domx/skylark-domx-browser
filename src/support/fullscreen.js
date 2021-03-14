@@ -58,7 +58,7 @@ define([
         }
         FullscreenApi.prefixed = browserApi[0] !== specApi[0];
 
-        browser.requestFullscreen = document[FullscreenApi["requestFullscreen"]];
+        browser.requestFullscreen = document.body[FullscreenApi["requestFullscreen"]];
         browser.exitFullscreen = document[FullscreenApi["exitFullscreen"]];
 
         browser.support.fullscreen = FullscreenApi;
